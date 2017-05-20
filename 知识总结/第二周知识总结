@@ -1,0 +1,371 @@
+上周知识回顾
+
+变量的作用域：
+
+    作用域从变量定义的位置开始，到该变量所在的那对大括号结束；
+
+数据类型：
+
+    1）：基本数据类型：byte、short、int、long、float、double、char、boolean
+
+    2）：引用数据类型: 数组、类、接口。
+
+级别从低到高为：byte,char,short(这三个平级)-->int-->float-->long-->double
+
+自动类型转换：从低级别到高级别，系统自动转的；
+
+强制类型转换：把一个高级别的数赋给一个别该数的级别低的变量；
+
+运算符号：
+
+1.算术运算符。
+
+        + - * / % 
+        +:连接符。
+        ++,--
+2.赋值运算符。
+        =  += -= *= /= %=
+3.比较运算符
+        特点：返回值为布尔值
+4.逻辑运算符。
+
+        & |  ^  !   &&   ||
+        &: 只有两边都为true结果是true。否则就是false。
+
+        |:只要两边都为false结果是false，否则就是true
+
+        ^:异或 加密解密运算
+
+             两边结果一样，就为false。
+
+             两边结果不一样，就为true.
+
+        & 和 &&区别：
+
+        & ：无论左边结果是什么，右边都参与运算。
+
+        &&:短路与，如果左边为false，那么右边不参数与运算。
+
+        | 和|| 区别：
+
+        |：两边都运算。
+
+        ||：短路或，如果左边为true，那么右边不参与运算。
+
+5.位运算符:用于操作二进制位的运算符。
+
+        &  |  ^
+
+        <<  >>   >>>(无符号右移)
+
+
+5，语句。
+
+    If  switch  do while   while  for
+
+switch(变量){
+
+   case 值:要执行的语句;break;
+   case 值:要执行的语句;break;
+   …
+
+   default:要执行的语句;
+
+}
+
+工作原理：用小括号中的变量的值依次和case后面的值进行对比，和哪个case后面的值相同了
+
+           就执行哪个case后面的语句，如果没有相同的则执行default后面的语句；
+
+ 细节：1：break是可以省略的，如果省略了就一直执行到遇到break为止；
+
+      2：switch 后面的小括号中的变量应该是byte,char,short,int，string,enum六种种类型中的一种；
+
+      3：default可以写在switch结构中的任意位置；如果将default语句放在了第一行，则不管expression与case中的value是否匹配，程序会从default开始执行直到第一个break出现。
+
+
+当某些语句需要执行很多次时，就用循环结构。
+
+    while和for可以进行互换。
+
+    区别在于：如果需要定义变量控制循环次数。建议使用for。因为for循环完毕，变量在内存中释放。
+
+    break:作用于switch ，和循环语句，用于跳出，或者称为结束。
+
+    break语句单独存在时，下面不要定义其他语句，因为执行不到，编译会失败。当循环嵌套时，break只跳出当前所在循环。要跳出嵌套中的外部循环，只要给循环起名字即可，这个名字称之为标号。
+
+    continue:只作用于循环结构，继续循环用的。
+
+    作用：结束本次循环，继续下次循环。该语句单独存在时，下面不可以定义语句，执行不到。
+
+
+=============================================================================================
+
+6.函 数：为了提高代码的复用性，可以将其定义成一个单独的功能，该功能的体现就是java中的函数。函数就是体现之一。
+
+java中的方法的定义格式：
+
+    修饰符 返回值类型 函数名(参数类型 形式参数1，参数类型 形式参数1，…){
+
+       执行语句；
+
+       return 返回值；
+
+    }
+
+当方法没有具体的返回值时，返回的返回值类型用void关键字表示。
+
+如果方法的返回值类型是void时，没有return语句。
+
+方法的作用：
+
+1）、用于定义功能。
+
+2）、用于封装代码提高代码的复用性。
+
+
+主函数：
+    public static void main(String[] args)
+    1 保证该类的独立运行。
+
+    2 因为它是程序的入口。
+
+    3 因为它在被jvm调用。
+
+自定义方法：-自己想要处理数据的方法，可以重复使用的
+ 
+
+重载的定义是：在一个类中，如果出现了两个或者两个以上的同名函数，只要它们的参数的个数，或者参数的类型不同，即可称之为该函数重载了。
+
+如何区分重载：当函数同名时，只看参数列表。和返回值类型没关系。
+
+ 
+
+7，数 组：用于存储同一类型数据的一个容器。好处：可以对该容器中的数据进行编号，从0开始。数组用于封装数据，就是一个具体的实体。
+
+如何在java中表现一个数组呢？两种表现形式。
+
+1 元素类型[] 变量名 = new 元素类型[元素的个数]；
+
+2 元素类型[] 变量名 = {元素1，元素2...}；
+
+元素类型[] 变量名 = new 元素类型[]{元素1，元素2...}；
+
+ 数组元素的遍历-------将数组中的元素全部依次取出
+
+  下标遍历法： 
+
+  for(int i = 0;i<=a.length-1;i++)
+  {
+      System.out.println(a[i]);
+  }
+  
+  超级for循环：
+
+  for(int i : a )
+  {
+     System.out.println(i);// 数组中每一个元素
+  }
+
+---------------------------------------------------------
+class demo 
+{
+    /**数组排序：一组进行排序，排序规则，由小到大--升序
+
+    由大到小---降序
+
+    排序方法一： 官方sort()方法。
+
+    优点：java工具类提供的排序方法是效率最高
+
+    缺点： 只能升序
+
+    排序方法二：经典冒泡排序（面试高频点）
+    
+    冒泡排序算法：降序排列 ---前面位置的数大于后面位数上的数
+
+    原理：根据排序规则，将相邻的俩个元素做比较，如果符合排序规则，
+    不许用改变元素的位置，如果不符合排序规则，将相连俩个元素的位置互换。
+
+    冒泡排序的优化版：不会再有元素的交换的时候，也就是说顺序已经排好的时候，不要
+
+    不会重复打印排好的序的数组。解决思路：在元素的发生交换的地方加一个标识符
+   
+    排序方法三： 选择排序
+
+    算法原理：第一个元素与其他所有的元素做比较，符合排序规则，交换位置
+
+    **/
+import  java.util.*;
+
+
+/*输入若干字符串数组 ，进行字符串长度从长到短降序排列*/
+class Demo{
+    static Scanner input=new Scanner(System.in);
+    static String [] arr= new String [5];
+    static int [] iNum= new int [5];
+    public static void main(String[] args) {
+        //输入获取一个字符串数组；
+        arr=getArr();
+        //通过字符串数组取得一个与其各个项字符串长度对应的int类型数组;
+        iNum=getIntArr(arr);
+        //对取得的int数组进行冒泡排序;并将字符串数组与其各项对应输出，得到结果
+        //arr=sortArr(arr,iNum);
+        arr=choiseArr(arr,iNum);
+        System.out.println(Arrays.toString(arr));
+    }
+
+    public  static String [] getArr() {
+        int i=0;
+        while (i<arr.length) {
+            System.out.println("请输入第"+i+"个字符串：");
+            arr[i]=input.next();
+            i++;
+        }
+        return arr;
+    }
+    public  static int [] getIntArr(String [] a) {
+        int i=0;
+        while (i<a.length) {
+            iNum[i]=a[i].length();
+            i++;
+        }
+        return iNum;
+    }
+    //优化版冒泡排序
+/*  public  static String [] sortArr(String [] a,int [] b) {
+        boolean flag;
+        for (int i=0;i<a.length;i++) {
+                flag=true;
+            for (int j=0;j<a.length-1;j++) {
+                if (b[j]<b[j+1]) {
+                    int temp=b[j];
+                    String str=a[j];
+                    b[j]=b[j+1];
+                    a[j]=a[j+1];
+                    b[j+1]=temp;
+                    a[j+1]=str;
+                    flag=false;
+                }
+            }
+            if (flag) {
+                break;
+            }
+            System.out.println(Arrays.toString(b));
+        }
+        return a;//利用与字符串长度对应的数字数组排序，让字符串各项与其坐相同改变达到使字符串长度由长到短 的排列 并返回
+    }*/
+    //选择排序
+    public  static String [] choiseArr(String [] a,int [] b) {
+        for (int i=0;i<a.length-1;i++) {
+            for (int j=i+1;j<a.length;j++) {
+                if (b[i]<b[j]) {
+                    int temp=b[i];
+
+                    String str=a[i];
+                    b[i]=b[j];
+                    a[i]=a[j];
+                    b[j]=temp;
+                    a[j]=str;
+                }
+            }
+            System.out.println(Arrays.toString(b));
+        }
+        return a;//利用与字符串长度对应的数字数组排序，让字符串各项与其坐相同改变达到使字符串长度由长到短 的排列 并返回
+    }
+}
+
+---------------------------------------------------------
+
+//二分查找法。必须有前提：数组中的元素要有序。
+
+    public static int halfSeach_2(int[] arr,int key){
+
+        int min,max,mid;
+
+        min = 0;
+
+        max = arr.length-1;
+
+        mid = (max+min)>>1; //(max+min)/2;
+
+        while(arr[mid]!=key){
+
+            if(key>arr[mid]){
+
+                min = mid + 1;
+
+            }
+
+            else if(key<arr[mid])
+
+                max = mid - 1;
+
+            if(max<min)
+
+                return -1;
+
+            mid = (max+min)>>1;
+
+        }
+
+        return mid;
+
+    }
+
+---------------------------------------------------------
+二维数组
+二维数组用数组“名称”与“两个索引”来指定存取数组中的元素。
+
+其定义方式与一维数组类似:
+
+int[][] arr = {{1,2,3},
+
+               {4,5,6}};
+
+    length所代表的长度，数组名后直接加上length(如arr.length),所指的是数组有几行； 指定索引后加上length(如arr[0].length),指的是该行拥有的元素。
+
+数组的复制
+1. 使用System.arraycopy()方法
+
+   System.arraycopy(来源，起始索引，目的，起始索引，复制长度);
+
+   例如：
+
+   int[] arr1 = {1,2,3,4,5};
+
+   int[] arr2 = new int[5];
+
+   System.arraycopy(arr1, 0, arr2, 0, arr1.length);
+
+2.Arrays类新增了copyOf()方法，可以直接返回一个新的数组对象，而其中包括复制的内容
+
+   例如：
+
+   import java.util.Arrays;
+
+   int[] arr1 = {1,2,3,4,5};
+
+   int[] arr2 = Arrays.copyOf(arr1,arr1.length);
+
+   Arrays的copyOf()方法返回的数组是新的数组对象，所以改变返回数组中元素的值不会影响原来数组中元素的值。copyOf()方法中第二个变量指定新数组的长度，如果新数组的长度超过原来数组的长度，则多出来的元素会保留数组默认值。
+
+   除了copyOf()方法外，还有copyOfRange()方法，可以指定来源数组以及要复制的索引范围：
+
+   int arr1 = {1,2,3,4,5};
+
+   int arr2 = Array.copyOfRange(arr1,1,4);  // 复制索引1开始到索引4（但不包括索引4）的元素，arr2的元素会是2,3,4
+
+    Array类
+    Array类位于java.util包中，它提供了几个方法可以直接使用：
+
+    toString(数组名); 将数组中的所有的元素连接成一长串字符打印输出
+
+    sort(数组名) - 对指定数组排序，使用的是快速排序法
+
+    binarySearch() - 让你对已排序的数组进行二分查找，如果找到指定的值就返回该值所在的索引，否则就返回负值
+
+    fill() - Arrays.fill()将已创建数组的默认值改为指定值
+
+    equals() - 比较两个数组中的元素值是否全相等，如果相等返回true,否则返回false
+
