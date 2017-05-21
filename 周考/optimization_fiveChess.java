@@ -52,8 +52,7 @@ class Five_chess
 		while (true)
 			{
 			getCoordinate();		
-			if (judgePiece(row_num,col_num) ) 
-				{
+			if (judgePiece(row_num,col_num) ){
 				System.out.println("请重新输入:");
 				continue;
 			}
@@ -83,15 +82,14 @@ class Five_chess
 				if (i==0&&j>0) {
 				   boards[i][j]=rows_sign;
 				   rows_sign++;
-				   if (rows_sign=='9'+1) {
+				   if (rows_sign=='9'+1) 
 				   		rows_sign='A';
-				   }
+				   
 				}else if (j==0&&i>0) {
 				   boards[i][j]=cols_sign;
 				   cols_sign++;
-				   if (cols_sign=='9'+1) {
+				   if (cols_sign=='9'+1) 
 				   		cols_sign='A';
-				   }
 				}
 				else{
 					boards[i][j]='╋';
@@ -200,7 +198,7 @@ class Five_chess
 					}
 				}
 			}
-			System.out.println(num);
+			//System.out.println(num);
 			return  num;
 	}
 	/**
@@ -210,17 +208,15 @@ class Five_chess
 	*/
 	public static boolean judgeWin(char piece){
 		int count=4;
-		if (count<=(getDirection(0,1,piece)+getDirection(0,-1,piece))) {
+		if (count<=(getDirection(0,1,piece)+getDirection(0,-1,piece))) 
 			return true;
-		}else if (count<=getDirection(1,0,piece)+getDirection(-1,0,piece)) {
+		else if (count<=getDirection(1,0,piece)+getDirection(-1,0,piece)) 
 			return true;
-		}else if (count<=getDirection(1,1,piece)+getDirection(-1,-1,piece)) {
+		else if (count<=getDirection(1,1,piece)+getDirection(-1,-1,piece)) 
 			return true;
-		}else if (count<=getDirection(1,-1,piece)+getDirection(-1,1,piece)) {
+		else if (count<=getDirection(1,-1,piece)+getDirection(-1,1,piece)) 
 			return true;
-		}else{
+		else
 			return false;
-		}
-		
 	}
 }
