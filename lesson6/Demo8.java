@@ -8,8 +8,7 @@ enum MyWeek
 
 class Demo8 
 {
-	/**
-    switch分支  key值枚举 enum 
+	/**switch分支  key值枚举 enum 
 	enum -----一种特殊的数据类型，将某一个范围内的可列举的情况都罗列出来
 	***/
 	public static void main(String[] args) 
