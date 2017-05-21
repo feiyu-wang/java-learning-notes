@@ -141,9 +141,8 @@ class Five_chess
 		}else if(boards[piece_x][piece_y]!='╋') {
 			System.out.println("此处已落子");
 			return true;
-		}else{
+		}else
 			return false;
-		}
 	}
 	/**
 	 *5.判断玩家落子是否符合要求
