@@ -6,28 +6,42 @@ class Five_chess
 	static int cols=16;
 	static int row_num;
 	static int col_num;
+	static int machine_row;
+	static int machine_col;
 	static String piece_x;
 	static String piece_y;
-	static char player;
+	static char player='★';
 	static boolean flag;
+	static String answer;
+	static boolean machine;
 	static Scanner input=new Scanner(System.in);
 
 	public static void main(String[] args) {
 		drawBoard();
 		printBoard();
+		System.out.println("是否选择"+player+"作为人机和您对战：yes/no");
+		String answer=input.next();
+		setMachine(answer);
 		while (true) {
 		 	judgePlayer(player);
 			System.out.println(flag?"白子：":"黑子：");
 			player=flag?'★':'☆';
 			while (true) {
-				getCoordinate();
-				if (judgePiece(piece_x,piece_y)) {
-					continue;
-				}else{
+				if (machine&&flag) {
+					machinePiece();
 					setPiece(player);
 					printBoard();				
 					break;
-				}
+				}else{
+					getCoordinate();
+					if (judgePiece(piece_x,piece_y)) {
+						continue;
+					}else{
+						setPiece(player);
+						printBoard();
+						break;
+					}
+				}	
 			}
 			if(judgeWin(player)){
 				System.out.println(flag?"白子赢了":"黑子赢了");
@@ -177,15 +191,33 @@ class Five_chess
 	}
 	
 	public static boolean judgeWin(char piece){
-		if ((getDirection(0,1,piece)+getDirection(0,-1,piece))>=4)
+		if ((getDirection(0,1,piece)+getDirection(0,-1,piece))>=4){
+			 return true;
+		}
+		else if (getDirection(1,0,piece)+getDirection(-1,0,piece)>=4){
 			return true;
-		else if (getDirection(1,0,piece)+getDirection(-1,0,piece)>=4)
+		}
+		else if (getDirection(1,1,piece)+getDirection(-1,-1,piece)>=4){
 			return true;
-		else if (getDirection(1,1,piece)+getDirection(-1,-1,piece)>=4)
+		}
+		else if (getDirection(1,-1,piece)+getDirection(-1,1,piece)>=4){
 			return true;
-		else if (getDirection(1,-1,piece)+getDirection(-1,1,piece)>=4)
-			return true;
+		}
 		else
 			return false;		
+	}
+	//机器人对战
+	public static void setMachine(String answer){
+	
+		if (answer.equals("yes")) {
+				machine=true;
+			}else{
+				machine=false;
+			}
+		}	
+	//机器人落子判定
+	public static void machinePiece(){
+				row_num=(int)(Math.random()*14+1);
+				col_num=(int)(Math.random()*14+1);
 	}
 }
