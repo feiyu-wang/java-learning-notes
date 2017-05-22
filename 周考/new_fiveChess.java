@@ -1,21 +1,15 @@
 import java.util.*;
 class Five_chess
 	{	
-	/**  声明一个16行16列的二维数组    */
 	static char [] [] boards=new char[16] [16];
-	/*    存二维数组的行数和列数     */
 	static int rows=16;
 	static int cols=16;
-	/* 声明变量row_num,col_num,存扫描器输入的行数和列数 */
 	static int row_num;
 	static int col_num;
 	static String piece_x;
 	static String piece_y;
-	/*  声明变量 white ,black存char类型的棋子字符; */
-	/*★☆*/
 	static char player;
 	static boolean flag;
-	//new一个文本扫描器
 	static Scanner input=new Scanner(System.in);
 
 	public static void main(String[] args) {
@@ -25,11 +19,9 @@ class Five_chess
 		 	judgePlayer(player);
 			System.out.println(flag?"白子：":"黑子：");
 			player=flag?'★':'☆';
-			System.out.println(player);
 			while (true) {
 				getCoordinate();
 				if (judgePiece(piece_x,piece_y)) {
-					//System.out.println("请重新输入:");
 					continue;
 				}else{
 					setPiece(player);
@@ -144,7 +136,6 @@ class Five_chess
 
 	public static int getDirection(int piece_changeX,int piece_changeY,char piece){
 		int num=0;
-		//while循环条件 落子位置到各个方向遍历的位置上如果有该玩家所执棋子 并且 判断各个方向的边界 返回各个方向中找到的最多的棋子数 num.
 		while (row_num+piece_changeX<16&&col_num+piece_changeY<16&&row_num+piece_changeX>=1&&col_num+piece_changeY>=1&&boards[row_num+piece_changeX][col_num+piece_changeY]==piece) {
 				num++;
 				//左右方向
