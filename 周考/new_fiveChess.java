@@ -104,14 +104,19 @@ class Five_chess
 		  piece_y=input.next().toUpperCase();
 		 	int ch=piece_x.charAt(0);
 			int ch2=piece_y.charAt(0);
-			if (ch>=48&&ch<=57&&ch2>=48&&ch2<=57) {
+			if (ch>=48&&ch<=57) {
 				row_num=Integer.parseInt(piece_x);
-				col_num=Integer.parseInt(piece_y);
-			}else if (ch>=65&&ch<=70&&ch2>=65&&ch2<=70) {
+			}else if (ch>=65&&ch<=70) {
 				row_num=ch-55;
-				col_num=ch2-55;
+
 			}else{
 				row_num=ch;
+			}
+			if (ch2>=48&&ch2<=57) {
+				col_num=Integer.parseInt(piece_y);
+			}else if (ch2>=65&&ch2<=70) {
+				col_num=ch2-55;
+			}else{
 				col_num=ch2;
 			}
 			System.out.println(row_num+"---------"+col_num);
