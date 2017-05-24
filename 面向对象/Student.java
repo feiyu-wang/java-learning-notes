@@ -35,9 +35,6 @@ class getScore{
 		Student s1=new Student("张三",18,70,81,99);
 		Student s2=new Student("李四",19,80,69,77);
 		Student s3=new Student("王五",22,91,81,95);
-		/*int score1=s1.compareScore();
-		int score2=s2.compareScore();
-		int score3=s3.compareScore();*/
 		int max=0;
 		max= Math.max(s3.sumScore(),Math.max(s1.sumScore(),s2.sumScore()));
 		System.out.println(max);
