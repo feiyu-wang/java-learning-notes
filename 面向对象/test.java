@@ -273,3 +273,80 @@ class Demo2{
 		new Demo2().fun();
 	}
 }
+
+class Dog{
+	private String name;
+	private String type;
+	private int age;
+	private static double height;
+	private static int bone;
+	static{
+		bone++;
+		height+=0.1;
+		System.out.println(bone+"------------"+height);
+	}
+	public Dog(){
+		name=null;
+		type=null;
+		age=0;
+		height=0.0;
+
+	}
+	public Dog(String name,String type,int age, double height) {
+		bone++;
+		this.name=name;
+		this.type=type;
+		this.age=age;
+		this.height=height;
+	}
+	public void setAge(int age){
+		if (age>35||age<0) {
+			System.out.println("输入年龄不合法");
+		}else{
+			this.age=age;
+		}
+	}
+	public double getAge(){
+			return age;
+	}
+	public static void changeBone(){
+		{
+			bone=0;
+			System.out.println("我改变了骨头的数量"+bone);
+		}
+	}
+	/*public double [] getHeightArr(Dog [] d){
+		double [] arr=new double[d.length-1];
+		for (int i=0;i<d.length-1; ) {
+			arr[i]=d[i].getHeight();
+		}
+		System.out.println(Arrays.toString(arr));
+		return arr;
+	}*/
+	public void setType(String type){		
+			this.type=type;
+	}
+	public String getType(){
+			return type;
+	}
+	public static void smell(Dog d){
+		System.out.println(d.getType()+"嗅觉都非常敏锐");
+	}
+	public static void main(String[] args) {
+		Dog d1=new Dog("小黑","斑点狗",20,0.4);
+		Dog d2=new Dog("小黄","大黄狗",21,0.56);
+		Dog d3=new Dog("小白","长毛狗",18,0.6);
+		System.out.println(Dog.bone);
+		d3.smell(d3);
+		Dog.changeBone();
+	}
+}
+
+
+class TestInteget{
+	public static void main(String[] args) {
+		int num=521344;
+		int num2=Integer.reverse(num);
+		System.out.println(num2);
+	}
+}
