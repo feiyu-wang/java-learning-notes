@@ -32,7 +32,7 @@ class Circle{
 		double perimeter=0.0;
 		perimeter=2*Math.PI*c.getR();
 		BigDecimal b=new BigDecimal(perimeter);
-		double d=b.setScale(2,BigDecimal.ROUND_HALF_UP).doubleValue();
+		double d=b.setScale(2,RoundingMode.HALF_UP).doubleValue();
 		return d;
 	}
 	public static  void print(Circle c){

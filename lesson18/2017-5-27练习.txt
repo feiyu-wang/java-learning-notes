@@ -1,0 +1,18 @@
+
+（一）编写一个圆类Circle，该类拥有①一个成员变量  Radius（私有，浮点型）;// 存放圆的半径；        
+②两个构造方法 Circle( ) // 将半径设为0  Circle(double  r )  //创建Circle对象时将半径初始化为r       
+③ 三个成员方法  double getArea( )  //获取圆的面积  double getPerimeter( )   //获取圆的周长              
+void  show( )          //将圆的半径、周长、面积输出到屏幕 
+（2）编写一个圆柱体类Cylinder，它继承于上面的Circle类。还拥有：  ①一个成员变量  double hight（私有，浮点型）；  
+// 圆柱体的高；②构造方法 Cylinder (double r, double  h ) //创建Circle对象时将半径初始化为r         
+③ 成员方法  double getVolume( )             //获取圆柱体的体积 void  showVolume( ) //将圆柱体的体积输出到屏幕  
+编写应用程序，创建类的对象，分别设置圆的半径、圆柱体的高，计算并分别显示圆半径、圆面积、圆周长，圆柱体的体。
+
+
+ （二）定义一个名为Vehicles（交通工具）的基类，该类中应包含String类型的成员属性brand（商标）和color（颜色），
+ 还应包含成员方法run（行驶，在控制台显示“我已经开动了”）和showInfo（显示信息，在控制台显示商标和颜色），并编写构造方法初始化其成员属性。??
+ 编写Car（小汽车）类继承于Vehicles类，增加int型成员属性seats（座位），
+ 还应增加成员方法showCar（在控制台显示小汽车的信息），并编写构造方法。?
+ 编写Truck（卡车）类继承于Vehicles类，增加float型成员属性load（载重），
+ 还应增加成员方法showTruck（在控制台显示卡车的信息），并编写构造方法。?
+ 在main方法中测试以上各类。 
