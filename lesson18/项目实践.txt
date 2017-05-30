@@ -1,41 +1,41 @@
-ÒøÐÐÕË»§¹ÜÀíÐÅÏ¢ÏµÍ³
+é“¶è¡Œè´¦æˆ·ç®¡ç†ä¿¡æ¯ç³»ç»Ÿ
 
-Á·Ï°Ò»
+ç»ƒä¹ ä¸€
 
-±àÐ´Ò»¸öÕË»§Àà(Account)
+ç¼–å†™ä¸€ä¸ªè´¦æˆ·ç±»(Account)
 
-ÊôÐÔ£ºid ³¤ÕûÐÍ ÕË»§ºÅÂë
-      password ×Ö·û´®ÀàÐÍ ÕË»§ÃÜÂë
-      name ×Ö·û´®ÀàÐÍ ÕæÊµÐÕÃû
-      passId ×Ö·û´®ÀàÐÍ Éí·ÝÖ¤ºÅÂë
-      balance ÕË»§Óà¶î double 
-·½·¨£ºdeposit  ´æ¿î·½·¨£¬²ÎÊýÊÇdoubleÐÍµÄ½ð¶î
+å±žæ€§ï¼šid é•¿æ•´åž‹ è´¦æˆ·å·ç 
+      password å­—ç¬¦ä¸²ç±»åž‹ è´¦æˆ·å¯†ç 
+      name å­—ç¬¦ä¸²ç±»åž‹ çœŸå®žå§“å
+      passId å­—ç¬¦ä¸²ç±»åž‹ èº«ä»½è¯å·ç 
+      balance è´¦æˆ·ä½™é¢ double 
+æ–¹æ³•ï¼šdeposit  å­˜æ¬¾æ–¹æ³•ï¼Œå‚æ•°æ˜¯doubleåž‹çš„é‡‘é¢
 	
-      withdraw È¡¿î·½·¨£¬²ÎÊýÊÇdoubleÐÍµÄ½ð¶î
-¹¹Ôì·½·¨£º
+      withdraw å–æ¬¾æ–¹æ³•ï¼Œå‚æ•°æ˜¯doubleåž‹çš„é‡‘é¢
+æž„é€ æ–¹æ³•ï¼š
 
-ÓÐ²Î ºÍ ÎÞ²Î
-
-
-Á·Ï°¶þ£º£¨·â×°£©
-½«AccountÀà×ö³ÉÍêÈ«·â×°
-
-Á·Ï°Èý£º£¨¼Ì³Ð¡¢¶àÌ¬£©
-
-ÒøÐÐµÄ¿Í»§·Ö³ÉÁ©Àà£¬´¢ÐîÕË»§£¨SavingAccount£© ºÍÐÅÓÃÕË»§
-£¨CreditAccount£©,Çø±ðÊÇÔÚÓÚ´¢ÐîÕË»§²»ÔÊÐíÍ¸Ö§£¬¶øÐÅÓÃÕË»§¿ÉÒÔÍ¸Ö§10000Ôª
+æœ‰å‚ å’Œ æ— å‚
 
 
-£¨1£©ÔÚentity°üÖÐ£¬±àÐ´BankÀà£¬ÊôÐÔ£º
- 1¡· µ±Ç°ËùÓÐµÄÕË»§¶ÔÏó¼¯ºÏ£¬´æ·ÅÔÚÊý×éÖÐ
- 2¡·µ±Ç°ÕË»§ÊýÁ¿
+ç»ƒä¹ äºŒï¼šï¼ˆå°è£…ï¼‰
+å°†Accountç±»åšæˆå®Œå…¨å°è£…
 
-·½·¨£º
- 1. ÓÃ»§¿ª»§£¬ÐèÒªµÄ²ÎÊý£º id,ÃÜÂë£¬ÃÜÂëÈ·ÈÏ£¬ÐÕÃû£¬Éí·ÝÖ¤ºÅÂë£¬ÕË»§ÀàÐÍ£¬·µ»ØÐÂ´´½¨µÄAccounta¶ÔÏóµÄÕËºÅ£¬ÌáÊ¾£ºÓÃÊÇ.equals(s2)±È½Ïs1ºÍs2Á©¸ö×Ö·û´®µÄÖµÊÇ·ñÏàµÈ£¬ÕË»§ÀàÐÍÊÇÒ»¸öÕûÊý£¬Îª0 µÄÊ±ºò±íÊ¾´¢ÐîÕË»§£¬Îª1 µÄÊ±ºò±íÊ¾ÐÅÓÃÕË»§
+ç»ƒä¹ ä¸‰ï¼šï¼ˆç»§æ‰¿ã€å¤šæ€ï¼‰
 
-2 ÓÃ»§µÇÂ¼£¬²ÎÊý£ºid£¬ÃÜÂë ·µ»ØµÇÂ¼ÕË»§µÄÕËºÅ
-3 ÓÃ»§´æ¿î£¬²ÎÊý£ºid£¬´æ¿îÊý¶î£¬·µ»ØVOID
-4 ÓÃ»§È¡¿î£¬²ÎÊý£ºid£¬È¡¿îÊý¾Ý£¬·µ»Øvoid
+é“¶è¡Œçš„å®¢æˆ·åˆ†æˆä¿©ç±»ï¼Œå‚¨è“„è´¦æˆ·ï¼ˆSavingAccountï¼‰ å’Œä¿¡ç”¨è´¦æˆ·
+ï¼ˆCreditAccountï¼‰,åŒºåˆ«æ˜¯åœ¨äºŽå‚¨è“„è´¦æˆ·ä¸å…è®¸é€æ”¯ï¼Œè€Œä¿¡ç”¨è´¦æˆ·å¯ä»¥é€æ”¯10000å…ƒ
+
+
+ï¼ˆ1ï¼‰åœ¨entityåŒ…ä¸­ï¼Œç¼–å†™Bankç±»ï¼Œå±žæ€§ï¼š
+ 1ã€‹ å½“å‰æ‰€æœ‰çš„è´¦æˆ·å¯¹è±¡é›†åˆï¼Œå­˜æ”¾åœ¨æ•°ç»„ä¸­
+ 2ã€‹å½“å‰è´¦æˆ·æ•°é‡
+
+æ–¹æ³•ï¼š
+ 1. ç”¨æˆ·å¼€æˆ·ï¼Œéœ€è¦çš„å‚æ•°ï¼š id,å¯†ç ï¼Œå¯†ç ç¡®è®¤ï¼Œå§“åï¼Œèº«ä»½è¯å·ç ï¼Œè´¦æˆ·ç±»åž‹ï¼Œè¿”å›žæ–°åˆ›å»ºçš„Accountaå¯¹è±¡çš„è´¦å·ï¼Œæç¤ºï¼šç”¨æ˜¯.equals(s2)æ¯”è¾ƒs1å’Œs2ä¿©ä¸ªå­—ç¬¦ä¸²çš„å€¼æ˜¯å¦ç›¸ç­‰ï¼Œè´¦æˆ·ç±»åž‹æ˜¯ä¸€ä¸ªæ•´æ•°ï¼Œä¸º0 çš„æ—¶å€™è¡¨ç¤ºå‚¨è“„è´¦æˆ·ï¼Œä¸º1 çš„æ—¶å€™è¡¨ç¤ºä¿¡ç”¨è´¦æˆ·
+
+2 ç”¨æˆ·ç™»å½•ï¼Œå‚æ•°ï¼šidï¼Œå¯†ç  è¿”å›žç™»å½•è´¦æˆ·çš„è´¦å·
+3 ç”¨æˆ·å­˜æ¬¾ï¼Œå‚æ•°ï¼šidï¼Œå­˜æ¬¾æ•°é¢ï¼Œè¿”å›žVOID
+4 ç”¨æˆ·å–æ¬¾ï¼Œå‚æ•°ï¼šidï¼Œå–æ¬¾æ•°æ®ï¼Œè¿”å›žvoid
 
 
 
