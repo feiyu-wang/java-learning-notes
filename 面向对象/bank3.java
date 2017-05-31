@@ -63,20 +63,24 @@ class Bank extends Account{
   public int count1;
   public int count2;
   public int trueNum;
+  public int signCount;//输入登录账户错误次数;
+  //public boolean goBack=false; //返回上一步
   public Bank(){
   	while (true) {
-  	  System.out.println("=======================================================================");
-	  System.out.println("===========================请选择您要选择的业务========================");
-	  System.out.println("=====================1.开户，2.登录 ，3.查询,4.存款，5.取款=====================");
-	  System.out.println("=======================================================================");
+  	  System.out.println("===============================================================================");
+	  System.out.println("===========================请选择您要选择的业务 =================================");
+	  System.out.println("=====================1.开户，2.登录 ，3.查询,4.存款，5.取款 ======================");
+	  System.out.println("===============================================================================");
 			int chose=new Scanner(System.in).nextInt();
 			switch (chose) {
 				case 1: openAccount(); break;
 				case 2: signIn(); break;
-				case 3:showInfo(type,account,trueNum); break;
+				case 3:showInfo(); break;
+				case 4:deposit(); break;
+				case 5:withdraw(); break;
 				default:;		
 			}
-		if (chose>2||chose<=0) {
+		if (chose>6||chose<=0) {
 				System.out.println("再见");
 				break;
 			}
@@ -95,7 +99,7 @@ class Bank extends Account{
 		while (true) {
 			System.out.println("请选择账户类型：0(储蓄账户)或者1(信用卡账户)");
 			int setType=new Scanner(System.in).nextInt();
-			if (type==0||type==1) {
+			if (setType==0||setType==1) {
 				type=setType;
 				break;
 			}else{
@@ -108,7 +112,6 @@ class Bank extends Account{
 	public long judgeId(String s,String choice){
 		long id=0; //返回id值
 		trueNum=-1;//获取登录匹配的账户的i值
-		int signCount=0;//输入登录账户错误次数;
 		while (true) {
 	      System.out.println("请输入您的账户号码：");
 	      long setId=new Scanner(System.in).nextLong();
@@ -117,12 +120,11 @@ class Bank extends Account{
 	      signCount++;
 	      //避免账号重复
 	      if (s.equals("register")) {
-	      	System.out.println("count====1======="+count);
+	      	System.out.println("signCount=========="+signCount);
 	      if (count!=0) {
-	      	System.out.println("count=====2======"+count);
 	      	boolean flag=false;
 	     	for (int i=0;i<length;i++) {
-	     		System.out.println("setId==="+setId+"=================account[type][i].getId()"+account[type][i].getId());
+	     		
 	     		if (setId==account[type][i].getId()) {
 	     			System.out.println("账号已存在");
 	     			flag=true;
@@ -134,31 +136,35 @@ class Bank extends Account{
 	     	if (flag) {
 	     		continue;
 	     	}else{
+	     		 signCount=0;
 	     		id=setId;
 	     		break;
 	     	}
 	     }else{
-	     	System.out.println("count=====3======"+count);
+	     	 signCount=0;
 	     	id=setId;
 	     	break;
 	     }
 	 	}else if (s.equals("signIn")) {
-	 		System.out.println("type==========="+type);
+	 		boolean flag=false;
 	      	for (int i=0;i<length;i++ ) {
-	      		System.out.println("setId==="+setId+"=================account[type][i].getId()"+account[type][i].getId());
 				if (setId==account[type][i].getId()) {
 	       			trueNum=i;
+	       			flag=true;
 	        		break;
+				}else{
+					flag=false;
 				}
 	     	 }
-	     	if (trueNum==-1&&signCount!=3) {
-	     	 	System.out.println("账户不存在============+signCount========="+signCount);
-	     	 	continue;
-	     	 }else if(trueNum==-1&&signCount==4){
+	     	 System.out.println("signCount=========="+signCount);
+	     	 if (!flag&&signCount<4) {
+	     	 	System.out.println("账户不存在");
+	     	 }else if (!flag&&signCount>=4) {
 	     	 	System.out.println("错误次数已达上限，返回到开始");
-	     	 	continue;
+	     	 	signCount=-1;
+	     	 	break;
 	     	 }else{
-	     	 	System.out.println("账户存在");
+	     	 	signCount=0;
 	     	 	break;
 	     	 }
 	 	 }
@@ -186,18 +192,37 @@ class Bank extends Account{
 		      	continue;
 		      }*/
 	      }else if(s.equals("signIn")){
+	      //	System.out.println(trueNum+"-----------");
 	      	if (passWord1.equals(account[type][trueNum].getPassWord())){
-	      		if (choice.equals("showInfo")) {
-	      			showInfo(type,account,trueNum);
-	      		}else if(choice.equals("deposit")){
-	      			deposit(trueNum,account,type);
-	      		}else if(choice.equals("withdraw")){
-	      			withdraw(trueNum,account,type);
-	      		}else{
+	      		if (choice.equals("null")) {
 	      			System.out.println("登录成功");
-	      			break;
+	      			print(account,type,trueNum);
+	      		}else if (choice.equals("showInfo")) {
+	      			print(account,type,trueNum);      			
+	      		}else if(choice.equals("deposit")){
+
+	      			System.out.println("请输入存款金额：");
+					double newBalance=account[type][trueNum].getBalance();
+					newBalance+=new Scanner(System.in).nextDouble();
+					account[type][trueNum].setBalance(newBalance);
+					System.out.println("存储成功！");
+					print(account,type,trueNum);
+
+	      		}else if(choice.equals("withdraw")){
+	      			while (true) {
+							System.out.println("请输入取款金额：");
+							double newBalance=account[type][trueNum].getBalance();
+							newBalance-=new Scanner(System.in).nextDouble();
+							if (newBalance<0) {
+								System.out.println("余额不足,请重新输入");
+							}else{
+								account[type][trueNum].setBalance(newBalance);
+								System.out.println("取款成功！您的信息如下");
+								print(account,type,trueNum);
+								break;
+							}
+						}
 	      		}
-				//showInfo();
 				trueNum=0;
 	      		break;
 	      	}else{
@@ -227,9 +252,9 @@ class Bank extends Account{
 	   	//设置账户类型
 	   	 setType(type);
 	    //设置账户号码
-	    setId(judgeId("register",null));
+	    setId(judgeId("register","null"));
 	    //设置账户密码 
-	    setPassWord(judgePassWord("register",null));
+	    setPassWord(judgePassWord("register","null"));
 	    //设置姓名
 	    System.out.println("请输入您的姓名：");
 	    setName(new Scanner(System.in).next());
@@ -243,45 +268,62 @@ class Bank extends Account{
 		 account[type][count]=new Account(getId(),getPassWord(),getName(),getPassId(),getBalance());
 	    //打印账户信息
 		System.out.println(Arrays.toString(account[type]));
+		System.out.println("开户成功！");
+		print(account,type,count);
 		int add=type==0?count1++:count2++;
 		return account[type];    
 	  }
 
-
-
   	public void signIn(){
   		int type=judgeType();
-  		judgeId("signIn",null);
-		//judgePassWord("signIn",null);   
+	   	//设置账户类型
+	   	 setType(type);
+  		judgeId("signIn","null");
+  		if (signCount==-1) {
+  			signCount=0;
+  		}else{
+  			judgePassWord("signIn","null");  
+  		}  
 	}  
 	//存款
-	public void deposit(int index,Account[] [] a,int type){
-		System.out.println("请输入存款金额：");
-		double newBalance=a[type][index].getBalance();
-		newBalance+=new Scanner(System.in).nextDouble();
-		a[type][index].setBalance(newBalance);
-		System.out.println("存储成功！您的信息如下");
+	public void deposit(){
+		int type=judgeType();
+	   	//设置账户类型
+	   	 setType(type);
+  		judgeId("signIn","deposit");
+  		if (signCount==-1) {
+  			signCount=0;
+  		}else{
+  			judgePassWord("signIn","deposit");  
+  		}  
 	}
 	//取款
-	public void withdraw(int index,Account [] [] a,int type){
-		while (true) {
-			System.out.println("请输入取款金额：");
-			double newBalance=a[type][index].getBalance();
-			newBalance-=new Scanner(System.in).nextDouble();
-			if (newBalance<0) {
-				System.out.println("余额不足,请重新输入");
-			}else{
-				a[type][index].setBalance(newBalance);
-				System.out.println("取款成功！您的信息如下");
-				break;
-			}
-		}
+	public void withdraw(){
+		int type=judgeType();
+	   	//设置账户类型
+	   	 setType(type);
+  		judgeId("signIn","withdraw");
+			if (signCount==-1) {
+  			signCount=0;
+  		}else{
+  			judgePassWord("signIn","withdraw");  
+  		}  
 	}
-  public void showInfo(int type,Account [][] a,int num){
-  		int setType=judgeType();
+  public void showInfo(){
+  		int type=judgeType();
+	   	//设置账户类型
+	   	setType(type);
   		judgeId("signIn","showInfo");
-		//judgePassWord("signIn","showInfo");
-		System.out.println("账户号码:"+a[type][num].getId()+"\n"+"账户密码:"+a[type][num].getPassWord()+"\n"+"姓名："+a[type][num].getName()+"\n"+"身份证号："+a[type][num].getPassId()+"\n"+"余额："+a[type][num].getBalance()+"\n");//"账户密码"+a.passWord "姓名："+a.name "身份证号："+a.passId
+		if (signCount==-1) {
+  			signCount=0;
+  		}else{
+  			judgePassWord("signIn","showInfo");  
+  		}  
+	}
+
+	public void print(Account [] [] account,int type,int index){
+		System.out.println("您的账户信息如下：");
+	    System.out.println("账户号码:"+account[type][index].getId()+"\n"+"账户密码:"+account[type][index].getPassWord()+"\n"+"姓名："+account[type][index].getName()+"\n"+"身份证号："+account[type][index].getPassId()+"\n"+"余额："+account[type][index].getBalance()+"\n");
 	}	
 }
 class Demo{
