@@ -84,17 +84,7 @@ class Account{
 		}
 	}
 }
-//储蓄卡账户
-class SavingAccount extends Bank{
-	public  SavingAccount() {
-    }
-}
-//信用卡账户
-class CreditAccount extends Bank{
-	public  CreditAccount() {
 
-    }
-}
 class Bank extends Account{
   public int type;
   public Account [] [] account=new Account[2][10];
@@ -138,7 +128,6 @@ class Bank extends Account{
       System.out.println("请输入您的账户号码：");
       long id=new Scanner(System.in).nextLong();
       //避免账号重复
-      System.out.println(type);
       if (type==0&&count1!=0) {
       	boolean flag=false;
      	for (int i=0;i<count1;i++) {
@@ -285,6 +274,8 @@ class Bank extends Account{
 	      }else if(trueNum==-1&&j==4){
 	      	System.out.println("错误次数达到三次，再见");
 	        break;
+	      }else{
+	      	break;
 	      }
       }
 	}  
