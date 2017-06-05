@@ -1,35 +1,35 @@
 /**
-ÀàµÄ¼Ì³Ğ
+ç±»çš„ç»§æ‰¿
 
-ÔÚÃæÏò¶ÔÏóÖĞ£¬ËùÓĞµÄÊµÌåÀàÄ¬ÈÏµÄ¶¥²ã¸¸Àà¶¼ÊÇObjectÀà
+åœ¨é¢å‘å¯¹è±¡ä¸­ï¼Œæ‰€æœ‰çš„å®ä½“ç±»é»˜è®¤çš„é¡¶å±‚çˆ¶ç±»éƒ½æ˜¯Objectç±»
 
 String ------Object 
 Integer-----Number-----Object  
 
-»¹ÒªÊÇ·¢Éú¼Ì³Ğ¹ØÏµµÄÀà£º 
+è¿˜è¦æ˜¯å‘ç”Ÿç»§æ‰¿å…³ç³»çš„ç±»ï¼š 
 
-³ÉÔ±±äÁ¿ºÍ³ÉÔ±·½·¨ÌØµã£º
+æˆå‘˜å˜é‡å’Œæˆå‘˜æ–¹æ³•ç‰¹ç‚¹ï¼š
 
-Ë½ÓĞ»¹ÊÇ¹«ÓĞ£º¡¡(private ,protected )Ë½ÓĞµÄ---¼´Ê¹ÓĞ¼Ì³Ğ¹ØÏµ£¬×ÓÀà²»ÄÜÖ±½ÓÊ¹ÓÃ¸¸ÀàµÄ³ÉÔ±±äÁ¿»òÕß³ÉÔ±·½·¨
-                 ¹«ÓĞµÄ---×ÓÀàÖ±½ÓÊ¹ÓÃ¸¸ÀàµÄ³ÉÔ±±äÁ¿ºÍ³ÉÔ±·½·¨
+ç§æœ‰è¿˜æ˜¯å…¬æœ‰ï¼šã€€(private ,protected )ç§æœ‰çš„---å³ä½¿æœ‰ç»§æ‰¿å…³ç³»ï¼Œå­ç±»ä¸èƒ½ç›´æ¥ä½¿ç”¨çˆ¶ç±»çš„æˆå‘˜å˜é‡æˆ–è€…æˆå‘˜æ–¹æ³•
+                 å…¬æœ‰çš„---å­ç±»ç›´æ¥ä½¿ç”¨çˆ¶ç±»çš„æˆå‘˜å˜é‡å’Œæˆå‘˜æ–¹æ³•
 
-¹¹Ôì·½·¨²»ÄÜÖ±½Ó¼Ì³Ğ¡£
+æ„é€ æ–¹æ³•ä¸èƒ½ç›´æ¥ç»§æ‰¿ã€‚
 
-1  ×ÓÀàµÄ¿Õ²ÎµÄ¹¹Ôì·½·¨»áÄ¬ÈÏµ÷ÓÃ¸¸Àà¿Õ²Î¹¹Ôì·½·¨£¬Ïàµ±ÓÚ³ÌĞòÄ¬ÈÏÖ´ĞĞÁËsuper()Óï¾ä
+1  å­ç±»çš„ç©ºå‚çš„æ„é€ æ–¹æ³•ä¼šé»˜è®¤è°ƒç”¨çˆ¶ç±»ç©ºå‚æ„é€ æ–¹æ³•ï¼Œç›¸å½“äºç¨‹åºé»˜è®¤æ‰§è¡Œäº†super()è¯­å¥
 
-2  ×ÓÀàµÄÈ«²Î¹¹ÔìÄ¬ÈÏµ÷ÓÃ¸¸Àà¿Õ²Î¹¹Ôì¡£
+2  å­ç±»çš„å…¨å‚æ„é€ é»˜è®¤è°ƒç”¨çˆ¶ç±»ç©ºå‚æ„é€ ã€‚
 
-3  Í¨¹ısuperÓï¾ä¿ÉÒÔÇ¿ÖÆµ÷ÓÃ¸¸ÀàµÄÓĞ²ÎÊıµÄ¹¹Ôì·½·¨
+3  é€šè¿‡superè¯­å¥å¯ä»¥å¼ºåˆ¶è°ƒç”¨çˆ¶ç±»çš„æœ‰å‚æ•°çš„æ„é€ æ–¹æ³•
 
-super ¹Ø¼ü×Ö£º
+super å…³é”®å­—ï¼š
 
-1  µ÷ÓÃ¸¸ÀàµÄ¹¹Ôì·½·¨
+1  è°ƒç”¨çˆ¶ç±»çš„æ„é€ æ–¹æ³•
 
-2  µ±¸¸ÀàºÍ×ÓÀàµÄ³ÉÔ±±äÁ¿»òÕß³ÉÔ±·½·¨ÏàÍ¬Ê±£¬Ç¿ÖÆµÄµ÷ÓÃÎÒ¸¸ÀàµÄ³ÉÔ±±äÁ¿ºÍ³ÉÔ±·½·¨
+2  å½“çˆ¶ç±»å’Œå­ç±»çš„æˆå‘˜å˜é‡æˆ–è€…æˆå‘˜æ–¹æ³•ç›¸åŒæ—¶ï¼Œå¼ºåˆ¶çš„è°ƒç”¨æˆ‘çˆ¶ç±»çš„æˆå‘˜å˜é‡å’Œæˆå‘˜æ–¹æ³•
 
-ObjectÀà£º
+Objectç±»ï¼š
 
-Ö±½Ó¼Ì³Ğ£ºtoString() hashCode() equals()
+ç›´æ¥ç»§æ‰¿ï¼štoString() hashCode() equals()
 
 
 **/
@@ -37,19 +37,19 @@ class Demo1 extends Object
 {
 	public static void main(String[] args) 
 	{
-		System.out.println("=============×Ô¶¨ÒåµÄ¼Ì³Ğ============");
+		System.out.println("=============è‡ªå®šä¹‰çš„ç»§æ‰¿============");
 //		System.out.println(new Demo1().equals(new Demo1()));
 //		System.out.println(new Demo1().hashCode());
 //		System.out.println(new Demo1());
-//		System.out.println(new Integer("123").hashCode()); // Ö±½Ó´òÓ¡Integer¶ÔÏóµÄ¹şÏ£Âë
+//		System.out.println(new Integer("123").hashCode()); // ç›´æ¥æ‰“å°Integerå¯¹è±¡çš„å“ˆå¸Œç 
         Person p1 = new Person();
-		Person p2 = new Person("ÕÅÈı",10,false);
+		Person p2 = new Person("å¼ ä¸‰",10,false);
 		
-		System.out.println("=====student×ÓÀàÊı¾İ========");
-		System.out.println("=======¿Õ²ÎStudent===========");
+		System.out.println("=====studentå­ç±»æ•°æ®========");
+		System.out.println("=======ç©ºå‚Student===========");
 		Student stu1 = new Student();
-		System.out.println("=======È«²ÎStudent==========");
-		Student stu2 = new Student("ÍõÎå",20,true,0100,98.5);
+		System.out.println("=======å…¨å‚Student==========");
+		Student stu2 = new Student("ç‹äº”",20,true,0100,98.5);
 //		System.out.println(stu1.name);
 //		System.out.println(stu1.age);
 //		System.out.println(stu1.gender);
@@ -58,7 +58,7 @@ class Demo1 extends Object
 		stu2.printBoolean(stu2.getGender());
         stu2.printInt(stu2.id);		
 		System.out.println(stu2.getScore());
-		System.out.println("======Academic×ÓÀàÊı¾İ=======");
+		System.out.println("======Academicå­ç±»æ•°æ®=======");
 //		System.out.println(a1.name);
 //		System.out.println(a1.age);
 //		System.out.println(a1.gender);
@@ -73,26 +73,26 @@ class Demo1 extends Object
 		return "demo instance ";
 	}
 }
-class Person //¼Ì³Ğ½á¹¹ÖĞ×îÉÏ²ã¸¸ÀàµÄ³ÉÔ±±äÁ¿ºÍ³ÉÔ±·½·¨¶¨ÒåÎª¹«ÓĞ£¬´òÆÆÀàµÄ·â×°
+class Person //ç»§æ‰¿ç»“æ„ä¸­æœ€ä¸Šå±‚çˆ¶ç±»çš„æˆå‘˜å˜é‡å’Œæˆå‘˜æ–¹æ³•å®šä¹‰ä¸ºå…¬æœ‰ï¼Œæ‰“ç ´ç±»çš„å°è£…
 {
    public String name;
    public int age;
    public boolean gender;
    public Person()
    {
-	   // ¹¹Ôì·½·¨µ÷ÓÃ¾²Ì¬³ÉÔ±·½·¨
-	   printString("Person ¿Õ²Î");
+	   // æ„é€ æ–¹æ³•è°ƒç”¨é™æ€æˆå‘˜æ–¹æ³•
+	   printString("Person ç©ºå‚");
    }
    public Person(String name,int age,boolean gender)
    { 
-       // ¹¹Ôì·½·¨Ã»ÓĞ¾²Ì¬ºÍ·Ç¾²Ì¬Ö®·Ö£¬Ö»ÒªÊÇ³ÉÔ±·½·¨¶¼ÄÜÊ¹ÓÃ
+       // æ„é€ æ–¹æ³•æ²¡æœ‰é™æ€å’Œéé™æ€ä¹‹åˆ†ï¼Œåªè¦æ˜¯æˆå‘˜æ–¹æ³•éƒ½èƒ½ä½¿ç”¨
        this.name = name;
 	   this.age = age;
 	   this.gender = gender;
 	   printString(name);
 	   printInt(age);
 	   printBoolean(gender);
-	   printString("person È«²Î");
+	   printString("person å…¨å‚");
    }
    public static void printString(String name)
    {
@@ -107,32 +107,32 @@ class Person //¼Ì³Ğ½á¹¹ÖĞ×îÉÏ²ã¸¸ÀàµÄ³ÉÔ±±äÁ¿ºÍ³ÉÔ±·½·¨¶¨ÒåÎª¹«ÓĞ£¬´òÆÆÀàµÄ·â×°
       System.out.println(gender);
    }
 }
-// PersonÀàµÄÒ»¼¶×ÓÀà
+// Personç±»çš„ä¸€çº§å­ç±»
 class Student extends Person
 {
 	private String name;
 	private int age;
 	private boolean gender;
-    public int id;// Ñ§ÉúµÄÑ§ºÅ 
-	private double score;// Ñ§Éú³É¼¨
+    public int id;// å­¦ç”Ÿçš„å­¦å· 
+	private double score;// å­¦ç”Ÿæˆç»©
 	public Student()
 	{
-		super(); // super ¹Ø¼ü×ÖµÚÒ»ÖÖ£º µ÷ÓÃ¸¸ÀàµÄ¹¹Ôì·½·¨
-        super.printString("Student ¿Õ²Î");
+		super(); // super å…³é”®å­—ç¬¬ä¸€ç§ï¼š è°ƒç”¨çˆ¶ç±»çš„æ„é€ æ–¹æ³•
+        super.printString("Student ç©ºå‚");
 	}
 	public Student(String name,int age,boolean gender,int id,double score)
 	{
-		//super();// Ä¬ÈÏ»áµ÷ÓÃ¸¸ÀàµÄ¿Õ²Î¹¹Ôì
-		// Í¨¹ısuperÓï¾äµ÷ÓÃ¸¸ÀàµÄÈ«²Î¹¹Ôì
-		super("Áõ¸ß",50,false);
+		//super();// é»˜è®¤ä¼šè°ƒç”¨çˆ¶ç±»çš„ç©ºå‚æ„é€ 
+		// é€šè¿‡superè¯­å¥è°ƒç”¨çˆ¶ç±»çš„å…¨å‚æ„é€ 
+		super("åˆ˜é«˜",50,false);
         this.name = super.name;
 		this.age = super.age;
 		this.gender = super.gender;
 		this.id = id;
 		this.score = score;
-		// super¹Ø¼ü×ÖµÚ¶şÓÃ·¨£º µ±¸¸ÀàºÍ×ÓÀàµÄ³ÉÔ±±äÁ¿»òÕß·½·¨ÏàÍ¬µÄÊ±ºò
-		// Ç¿ÖÆµ÷ÓÃ¸¸ÀàµÄ³ÉÔ±±äÁ¿ºÍ³ÉÔ±·½·¨£¬ÓÃsuper.³ÉÔ±±äÁ¿»òÕß³ÉÔ±·½·¨
-		super.printString("Student È«²Î");
+		// superå…³é”®å­—ç¬¬äºŒç”¨æ³•ï¼š å½“çˆ¶ç±»å’Œå­ç±»çš„æˆå‘˜å˜é‡æˆ–è€…æ–¹æ³•ç›¸åŒçš„æ—¶å€™
+		// å¼ºåˆ¶è°ƒç”¨çˆ¶ç±»çš„æˆå‘˜å˜é‡å’Œæˆå‘˜æ–¹æ³•ï¼Œç”¨super.æˆå‘˜å˜é‡æˆ–è€…æˆå‘˜æ–¹æ³•
+		super.printString("Student å…¨å‚");
 	}
 	public double getScore()
 	{
@@ -160,13 +160,23 @@ class Student extends Person
 		return gender;
 	}
 }
-// PersonÀàµÄ¶ş¼¶×ÓÀà
+// Personç±»çš„äºŒçº§å­ç±»
 class Academic  extends Student
 {
-    private String grade; //±¾¿ÆÉú°à¼¶
+    private String grade; //æœ¬ç§‘ç”Ÿç­çº§
 }
 class Master  extends Student
 {
-    private  String direction;// ÑĞ¾¿ÉúÑĞ¾¿·½Ïò 
+    private  String direction;// ç ”ç©¶ç”Ÿç ”ç©¶æ–¹å‘ 
 }
 
+public boolean  a(){
+	boolean btn=false;
+	for (int i=0;i<100 ;i++ ) {
+			if (i==5) {
+				btn=true;
+				break;
+			}
+	}
+	return btn;
+}
